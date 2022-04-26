@@ -1,0 +1,21 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url();">
+  <div class="container text-white">
+    <h1><%= @list.name %></h1>
+    <%= link_to "Update", edit_list_path(params[:id]), class: "btn btn-gradient" %>
+    <%= link_to "Delete",
+                  list_path(params[:id]),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }, class: "btn btn-gradient" %>
+    <%= link_to "Back to list", lists_path, class: "btn btn-flat" %>
+    <%= link_to "Create a bookmark", new_list_bookmark_path(@list), class: "btn btn-flat" %>
+  </div>
+</div>
+
+<div class="cards">
+<% if @bookmark %>
+raise
+  <% @movies.each do |movie| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+    <%= link_to movie.title, movie_path(movie) %></div>
+  <% end %></div>
+<% end %>

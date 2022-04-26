@@ -1,0 +1,14 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @movie.poster_url %>);">
+  <div class="container">
+    <h1><%= @movie.title %></h1>
+    <p><%= @movie.overview %></p>
+    <p><%= "⭐" * @movie.rating %></p>
+    <%= link_to "Update", edit_movie_path(params[:id]), class: "btn btn-gradient" %>
+    <%= link_to "Delete",
+                  movie_path(params[:id]),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }, class: "btn btn-gradient" %>
+    <%= link_to "Back to films", movies_path, class: "btn btn-flat" %>
+
+  </div>
+</div>
