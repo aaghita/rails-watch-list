@@ -12,9 +12,8 @@
 </div>
 
 <div class="cards">
-<% if @bookmark %>
-raise
-  <% @movies.each do |movie| %>
+<% if @list %>
+  <% @list.movies.each do |movie| %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
     <%= link_to movie.title, movie_path(movie) %></div>
   <% end %></div>
